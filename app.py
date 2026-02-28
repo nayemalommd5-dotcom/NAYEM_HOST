@@ -12,7 +12,7 @@ processes = {}
 
 def load_db():
     if not os.path.exists(DB_FILE):
-        default = {"user_pw": "nm42", "users": {}, "start_times": {}}
+        default = {"user_pw": "nm", "users": {}, "start_times": {}}
         with open(DB_FILE, "w") as f: json.dump(default, f)
         return default
     with open(DB_FILE, "r") as f:
@@ -23,7 +23,7 @@ def load_db():
             if "start_times" not in data: data["start_times"] = {}
             return data
         except:
-            return {"user_pw": "nm42", "users": {}, "start_times": {}}
+            return {"user_pw": "nmff", "users": {}, "start_times": {}}
 
 def save_db(data):
     temp_db = DB_FILE + ".tmp"
@@ -31,7 +31,7 @@ def save_db(data):
         json.dump(data, f, indent=4)
     os.replace(temp_db, DB_FILE)
 
-ADMIN_PASS = "4242"
+ADMIN_PASS = "7842"
 
 # --- LOGIN PAGE HTML ---
 LOGIN_HTML = '''
